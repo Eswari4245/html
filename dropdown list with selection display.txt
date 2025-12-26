@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown</title>
+    <script>
+        function showCourse() {
+            let c = document.getElementById("course").value;
+            document.getElementById("result").innerHTML = "Selected: " + c;
+        }
+    </script>
+</head>
+<body>
+    <h2>Select Course</h2>
+    <select id="course" onchange="showCourse()">
+        <option>C</option>
+        <option>Java</option>
+        <option>Python</option>
+        <option>HTML</option>
+    </select>
+    <p id="result"></p>
+</body>
+</html>
