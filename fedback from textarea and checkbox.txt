@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback</title>
+</head>
+<body>
+    <h2>Feedback Form</h2>
+    <form>
+        Name: <input type="text"><br><br>
+        Feedback:<br>
+        <textarea rows="4" cols="30"></textarea><br><br>
+
+        Rate Us:
+        <input type="checkbox"> Excellent
+        <input type="checkbox"> Good
+        <input type="checkbox"> Average<br><br>
+
+        <input type="submit">
+    </form>
+</body>
+</html>
