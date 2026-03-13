@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <title>My College - Student Details</title> 
+  <script> 
+    // User-defined object constructor for Student 
+    function Student(name) { 
+      this.name = name; 
+      // Generate a random user id using Math.random() and Math.floor() 
+      this.id = "A" + Math.floor(Math.random() * 1000); 
+      this.displayDetails = function() { 
+                var studentDiv = document.createElement('div'); 
+        studentDiv.innerHTML = '<h2>Student Details</h2>' + 
+                               '<p><strong>Name:</strong> ' + this.name + '</p>' + 
+                               '<p><strong>ID:</strong> ' + this.id + '</p>' 
+        // Append the div to the body using the pre-defined document object 
+        document.body.appendChild(studentDiv); 
+      } 
+    } 
+    // Run code after the document is fully loaded 
+    window.onload = function() { 
+      // Create a header element using a document method 
+      var header = document.createElement('h1'); 
+      header.textContent = 'My College - Student Details'; 
+      document.body.appendChild(header); 
+      var student1 = new Student("Arjun Kumar"); 
+      // Display the student's details 
+      student1.displayDetails(); 
+      // Additional information regarding String usage 
+      var infoPara = document.createElement('p'); 
+      infoPara.textContent = 'This example demonstrates string object properties and methods 
+applied to student details.'; 
+      document.body.appendChild(infoPara); 
+      // --------- String Object Properties and Methods Demonstration --------- 
+      // Section header for String Operations 
+      var stringHeader = document.createElement('h2'); 
+      stringHeader.textContent = 'String Object Properties and Methods'; 
+      document.body.appendChild(stringHeader); 
+      // Using the student name for various string operations 
+      var nameStr = student1.name; // "Arjun Kumar" 
+      // Display the length property of the string 
+      var lengthPara = document.createElement('p'); 
+      lengthPara.textContent = 'Length of student name: ' + nameStr.length; 
+      document.body.appendChild(lengthPara); 
+      // Convert the string to uppercase 
+      var upperPara = document.createElement('p'); 
+      upperPara.textContent = 'Uppercase: ' + nameStr.toUpperCase(); 
+      document.body.appendChild(upperPara);
+   // Convert the string to lowercase 
+      var lowerPara = document.createElement('p'); 
+      lowerPara.textContent = 'Lowercase: ' + nameStr.toLowerCase(); 
+      document.body.appendChild(lowerPara); 
+      // Extract a substring (first name) using substring() and indexOf() 
+      var firstName = nameStr.substring(0, nameStr.indexOf(" ")); 
+      var substringPara = document.createElement('p'); 
+      substringPara.textContent = 'First Name (using substring): ' + firstName; 
+      document.body.appendChild(substringPara); 
+      // Find the index of the space character in the name using indexOf() 
+      var indexPara = document.createElement('p'); 
+      indexPara.textContent = 'Index of space in name: ' + nameStr.indexOf(" "); 
+      document.body.appendChild(indexPara); 
+      // Split the full name into an array of words using split() 
+      var splitName = nameStr.split(" "); 
+      var splitPara = document.createElement('p'); 
+      splitPara.textContent = 'Split name (first and last): ' + splitName.join(" | "); 
+      document.body.appendChild(splitPara); 
+      // Display the first character of the name using charAt() 
+      var charPara = document.createElement('p'); 
+      charPara.textContent = 'First character of the name: ' + nameStr.charAt(0); 
+      document.body.appendChild(charPara); 
+    } 
+  </script> 
+</head> 
+<body> 
+</body> 
+</html> 
+OUTPUT:
