@@ -1,0 +1,63 @@
+CODE: 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>My College - Student Details</title> 
+  <script> 
+    // User-defined object constructor for Student 
+    function Student(firstName, lastName, branch) { 
+      // Properties 
+      this.firstName = firstName; 
+      this.lastName = lastName; 
+      this.branch = branch; 
+      // Generate a random user ID using Math.random() and Math.floor() 
+      this.id = "A" + Math.floor(Math.random() * 1000); 
+      // Accessor: Define a getter and setter for fullName 
+      Object.defineProperty(this, 'fullName', { 
+        get: function() {
+   
+            Aditya College of Engineering and Technology (A)                          Reg. No.:                                                          
+Expt. No.: 
+Date: 
+Page No.: 
+          return this.firstName + " " + this.lastName; 
+        }, 
+        set: function(name) { 
+          var parts = name.split(" "); 
+          this.firstName = parts[0]; 
+          this.lastName = parts[1] || ""; 
+        }, 
+        enumerable: true, 
+        configurable: true 
+      }); 
+      // Method: Display student details on the page using document methods 
+      this.displayDetails = function() { 
+        var studentDiv = document.createElement('div'); 
+        studentDiv.innerHTML = '<h2>Student Details</h2>' + 
+                               '<p><strong>ID:</strong> ' + this.id + '</p>' + 
+                               '<p><strong>Full Name:</strong> ' + this.fullName + '</p>' + 
+                               '<p><strong>Branch:</strong> ' + this.branch + '</p>'; 
+        document.body.appendChild(studentDiv); 
+      } 
+    } 
+    // Run the code after the document is fully loaded 
+    window.onload = function() { 
+      // Create an instance of the Student object using the constructor 
+      var student1 = new Student("Arjun", "Kumar", "Computer Science"); 
+      // Display the student details initially 
+      student1.displayDetails(); 
+      // Demonstrate the accessor: update the full name using the setter 
+      var updatePara = document.createElement('p'); 
+      updatePara.textContent = "Updating full name using the accessor..."; 
+      document.body.appendChild(updatePara); 
+      // Update the fullName property (this will update firstName and lastName) 
+      student1.fullName = "Rahul Sharma"; 
+      // Display the updated student details 
+      student1.displayDetails(); 
+    } 
+  </script> 
+</head> 
+<body> 
+</body> 
+</html>
